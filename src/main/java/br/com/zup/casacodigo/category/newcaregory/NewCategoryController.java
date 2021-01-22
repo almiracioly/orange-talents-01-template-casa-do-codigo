@@ -18,14 +18,6 @@ public class NewCategoryController {
     @Autowired
     private EntityManager entityManager;
 
-    @Autowired
-    private CategoryNameAlreadyExistsValidator categoryNameAlreadyExistsValidator;
-
-    @InitBinder
-    public void init(WebDataBinder binder){
-        binder.addValidators(categoryNameAlreadyExistsValidator);
-    }
-
     @PostMapping("/categories")
     @Transactional
     public ResponseEntity<?> exec(@RequestBody @Valid NewCategoryRequest request){

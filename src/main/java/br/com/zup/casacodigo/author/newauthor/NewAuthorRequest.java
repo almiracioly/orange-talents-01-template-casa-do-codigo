@@ -1,6 +1,7 @@
 package br.com.zup.casacodigo.author.newauthor;
 
 import br.com.zup.casacodigo.author.Author;
+import br.com.zup.casacodigo.shared.validator.UniqueValue;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -12,6 +13,7 @@ public class NewAuthorRequest {
 
     @NotBlank
     @Email
+    @UniqueValue(domainClass = Author.class, fieldName = "email", message = "Este Autor já está cadastrado")
     private String email;
 
     @NotBlank

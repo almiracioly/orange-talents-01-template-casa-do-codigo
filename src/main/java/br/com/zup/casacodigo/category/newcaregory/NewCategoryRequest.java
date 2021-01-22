@@ -1,12 +1,14 @@
 package br.com.zup.casacodigo.category.newcaregory;
 
 import br.com.zup.casacodigo.category.Category;
+import br.com.zup.casacodigo.shared.validator.UniqueValue;
 
 import javax.validation.constraints.NotBlank;
 
 public class NewCategoryRequest {
 
     @NotBlank
+    @UniqueValue(domainClass = Category.class, fieldName = "name", message = "Categoria já cadastrada")
     private String name;
 
     public Category toModel(){

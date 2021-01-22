@@ -19,14 +19,6 @@ public class NewAuthorController {
     @Autowired
     private EntityManager entityManager;
 
-    @Autowired
-    private AuthorEmailAlreadyExistsValidator authorEmailAlreadyExistsValidator;
-
-    @InitBinder
-    public void init(WebDataBinder binder){
-        binder.addValidators(authorEmailAlreadyExistsValidator);
-    }
-
     @PostMapping("/authors")
     @Transactional
     public ResponseEntity<?> exec(@RequestBody @Valid NewAuthorRequest request){
