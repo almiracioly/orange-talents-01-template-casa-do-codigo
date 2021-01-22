@@ -14,6 +14,9 @@ public class Author {
     @Column(nullable = false, columnDefinition = "TEXT") private String description;
     @Column(nullable = false) private LocalDateTime createdAt =  LocalDateTime.now();
 
+    @Deprecated
+    public Author(){}
+
     public Author(String name, String email, String description){
         this.name = name;
         this.email = email;

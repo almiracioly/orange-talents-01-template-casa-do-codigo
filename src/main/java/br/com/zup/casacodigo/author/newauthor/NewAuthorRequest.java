@@ -27,4 +27,8 @@ public class NewAuthorRequest {
         this.email = email;
         this.description = description;
     }
+
+    public String getEmail() {
+        return email;
+    }
 }

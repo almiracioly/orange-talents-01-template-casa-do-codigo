@@ -3,6 +3,8 @@ package br.com.zup.casacodigo.author.newauthor;
 import br.com.zup.casacodigo.author.Author;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +18,14 @@ public class NewAuthorController {
 
     @Autowired
     private EntityManager entityManager;
+
+    @Autowired
+    private AuthorEmailAlreadyExistsValidator authorEmailAlreadyExistsValidator;
+
+    @InitBinder
+    public void init(WebDataBinder binder){
+        binder.addValidators(authorEmailAlreadyExistsValidator);
+    }
 
     @PostMapping("/authors")
     @Transactional
