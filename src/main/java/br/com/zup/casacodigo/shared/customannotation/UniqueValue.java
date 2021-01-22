@@ -1,4 +1,4 @@
-package br.com.zup.casacodigo.shared.validator;
+package br.com.zup.casacodigo.shared.customannotation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

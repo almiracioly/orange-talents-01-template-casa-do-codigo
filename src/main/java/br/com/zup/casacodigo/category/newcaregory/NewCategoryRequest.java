@@ -1,7 +1,7 @@
 package br.com.zup.casacodigo.category.newcaregory;
 
 import br.com.zup.casacodigo.category.Category;
-import br.com.zup.casacodigo.shared.validator.UniqueValue;
+import br.com.zup.casacodigo.shared.customannotation.UniqueValue;
 
 import javax.validation.constraints.NotBlank;
 

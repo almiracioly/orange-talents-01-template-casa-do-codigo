@@ -3,8 +3,6 @@ package br.com.zup.casacodigo.category.newcaregory;
 import br.com.zup.casacodigo.category.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +21,6 @@ public class NewCategoryController {
     public ResponseEntity<?> exec(@RequestBody @Valid NewCategoryRequest request){
         Category category = request.toModel();
         entityManager.persist(category);
-
         return ResponseEntity.ok().build();
     }
 }

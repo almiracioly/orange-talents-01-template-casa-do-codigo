@@ -1,7 +1,7 @@
 package br.com.zup.casacodigo.author.newauthor;
 
 import br.com.zup.casacodigo.author.Author;
-import br.com.zup.casacodigo.shared.validator.UniqueValue;
+import br.com.zup.casacodigo.shared.customannotation.UniqueValue;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
