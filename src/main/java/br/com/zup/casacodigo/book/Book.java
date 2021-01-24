@@ -11,7 +11,9 @@ import java.time.LocalDate;
 @Table(name = "books")
 public class Book {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false, unique = true)
     private String title;
@@ -41,7 +43,8 @@ public class Book {
     private Author author;
 
     @Deprecated
-    public Book(){}
+    public Book() {
+    }
 
     public Book(String title, String resume, String summary, BigDecimal price, int numberOfPages, String isbn, Category category, Author author) {
         this.title = title;
@@ -57,4 +60,14 @@ public class Book {
     public void setFuturePublishDate(LocalDate futurePublishDate) {
         this.futurePublishDate = futurePublishDate;
     }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
 }
