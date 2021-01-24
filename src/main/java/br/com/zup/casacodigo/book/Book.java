@@ -33,13 +33,11 @@ public class Book {
 
     private LocalDate futurePublishDate = LocalDate.now().plusDays(30L);
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "category_id")
+    @ManyToOne
     private Category category;
 
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "author_id")
+    @ManyToOne
     private Author author;
 
     @Deprecated
