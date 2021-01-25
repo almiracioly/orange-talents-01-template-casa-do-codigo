@@ -70,4 +70,31 @@ public class Book {
         return title;
     }
 
+    public String getResume() {
+        return resume;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public int getNumberOfPages() {
+        return numberOfPages;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public LocalDate getFuturePublishDate() {
+        return futurePublishDate;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
 }
