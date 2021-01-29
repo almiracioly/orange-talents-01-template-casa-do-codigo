@@ -18,6 +18,8 @@ public class ExistsInDatabaseValidator implements ConstraintValidator<ExistsInDa
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext constraintValidatorContext) {
+        if(value == null) return true;
+
         Object foundObject = entityManager.find(aClass, value);
         return foundObject != null;
     }
